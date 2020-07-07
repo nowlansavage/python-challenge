@@ -31,9 +31,9 @@ with open(csvpath) as datafile:
 		net_total += prof_loss
 
 		#calculate profit change
-		
-		prof_change = prof_loss - last_month_prof_loss
-		changes.append(prof_change)
+		if total_months > 1:
+			prof_change = prof_loss - last_month_prof_loss
+			changes.append(prof_change)
 
 		#if value is greater than keep and store date
 		if prof_loss > biggest_profit:
